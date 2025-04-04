@@ -26,10 +26,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.frankline.zawadimart.R
 
 @Composable
-fun StartScreen(){
+fun StartScreen(navController: NavController){
     Column (
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -86,7 +88,7 @@ fun StartScreen(){
 @Preview(showBackground = true)
 @Composable
 fun StartScreenPreview(){
-    StartScreen()
+    StartScreen(rememberNavController())
 
 
 }
