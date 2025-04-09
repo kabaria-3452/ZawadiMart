@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.frankline.zawadimart.R
+import com.frankline.zawadimart.navigation.ROUT_START
 
 @Composable
 fun StartScreen(navController: NavController){
@@ -65,7 +66,9 @@ fun StartScreen(navController: NavController){
             textAlign = TextAlign.Center
         )
         Spacer(modifier = Modifier.height(20.dp))
-        Button(onClick = {},
+        Button(onClick = {
+            navController.navigate(ROUT_START)
+        },
             colors= ButtonDefaults.buttonColors(Color.Blue),
             shape = RoundedCornerShape(10.dp),
             modifier = Modifier.fillMaxWidth().padding(start = 20.dp)

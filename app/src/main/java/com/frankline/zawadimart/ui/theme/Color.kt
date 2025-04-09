@@ -13,4 +13,5 @@ val  neworange = Color(0xFFDA3E0D)
 val  newwhite = Color(0xFFE8E5E4)
 val  newblack = Color(0xFF111111)
 val  newred = Color(0xFF981818)
+val  neworange1 = Color(0xFF981818)
 
