@@ -163,10 +163,67 @@ fun ServiceScreen(navController: NavController){
 
                 )
                 Spacer(modifier = Modifier.height(20.dp))
+                Spacer(modifier = Modifier.height(20.dp))
+                //Row starts
+
+                Row(modifier = Modifier.padding(start = 20.dp)) {
+                    Image(
+                        painter = painterResource(R.drawable.tshirt),
+                        contentDescription = "home",
+                        modifier = Modifier.width(200.dp).height(200.dp).clip(shape = RoundedCornerShape(20.dp)),
+                        contentScale=ContentScale.FillWidth
+
+
+                    )
+                    Spacer(modifier = Modifier.width(20.dp))
+                    Column {
+                        Text(
+                            text = "Mens t-shirts",
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.ExtraBold
+                        )
+                        Text(
+                            text = "Casual Wear",
+                            fontSize = 15.sp,
+
+                            )
+                        Text(
+                            text = "ksh 2000",
+                            fontSize = 20.sp,
+                            textDecoration = TextDecoration.LineThrough
+
+                        )
+                        Text(
+                            text = "price ksh 2500",
+                            fontSize = 15.sp,
+
+
+                            )
+                        Row {
+                            Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
+                            Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
+                            Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
+                            Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
+                            Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
+
+                        }
+                        Button(onClick = {},
+                            colors= ButtonDefaults.buttonColors(Color.Red),
+                            shape = RoundedCornerShape(10.dp))
+                        { Text(text = "CONTACT US") }
+                    }
+
 
 
                 }
-        }
+                //row ends
+
+
+                }
+
+
+
+            }
     )
 
     //End of scaffold

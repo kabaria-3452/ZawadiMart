@@ -7,25 +7,29 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.frankline.zawadimart.navigation.ROUT_ABOUT
 import com.frankline.zawadimart.navigation.ROUT_DASHBOARD
+import com.frankline.zawadimart.navigation.ROUT_FORM
 import com.frankline.zawadimart.navigation.ROUT_HOME
 import com.frankline.zawadimart.navigation.ROUT_INTENT
 import com.frankline.zawadimart.navigation.ROUT_ITEM
 import com.frankline.zawadimart.navigation.ROUT_SERVICE
+import com.frankline.zawadimart.navigation.ROUT_SPLASH
 import com.frankline.zawadimart.navigation.ROUT_START
 import com.frankline.zawadimart.ui.screens.dashboard1.DashbaordScreen
 import com.frankline.zawadimart.ui.screens.dashboard1.DashbaordScreen
+import com.frankline.zawadimart.ui.screens.form.FormScreen
 import com.frankline.zawadimart.ui.screens.home.AboutScreen
 import com.frankline.zawadimart.ui.screens.home.HomeScreen
 import com.frankline.zawadimart.ui.screens.intent.IntentScreen
 import com.frankline.zawadimart.ui.screens.item.ItemScreen
 import com.frankline.zawadimart.ui.screens.service.ServiceScreen
+import com.frankline.zawadimart.ui.screens.splash.SplashScreen
 import com.frankline.zawadimart.ui.screens.startscreen.StartScreen
 
 @Composable
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = ROUT_HOME
+    startDestination: String = ROUT_SPLASH
 ) {
 
     NavHost(
@@ -55,6 +59,13 @@ fun AppNavHost(
         composable(ROUT_SERVICE) {
             ServiceScreen(navController)
         }
+        composable(ROUT_SPLASH) {
+            SplashScreen(navController)
+        }
+        composable(ROUT_FORM) {
+            FormScreen(navController)
+        }
+
 
 
 

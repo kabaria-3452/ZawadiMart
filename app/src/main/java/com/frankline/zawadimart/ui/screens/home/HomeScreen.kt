@@ -23,6 +23,8 @@ import com.frankline.zawadimart.R
 import com.frankline.zawadimart.navigation.ROUT_START
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.paint
+import androidx.compose.ui.layout.ContentScale
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -39,9 +41,12 @@ import com.frankline.zawadimart.ui.screens.intent.IntentScreen
 @Composable
 fun HomeScreen(navController: NavController){
     Column (
+
         modifier = Modifier.fillMaxSize()
+            .paint(painter = painterResource(R.drawable.truff), contentScale = ContentScale.FillBounds)
     ){
-        
+
+
 
         Text(
             text = "ZawadiMart",
