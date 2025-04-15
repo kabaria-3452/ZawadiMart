@@ -49,6 +49,7 @@ import com.frankline.zawadimart.R
 @Composable
 fun Form1Screen(navController: NavController){
     //box
+
     Box(){
         //card
         Card(
@@ -66,7 +67,7 @@ fun Form1Screen(navController: NavController){
                 Text(text = "WELCOME TO ", fontSize = 30.sp,
 
                     color = White)
-                Text(text = "HARAKAMALL", color = White, fontSize = 30.sp)
+                Text(text = "ZAWADIMART", color = White, fontSize = 30.sp)
                 Spacer(modifier = Modifier.height(20.dp))
                 Image(
                     painter = painterResource(R.drawable.shopping),
