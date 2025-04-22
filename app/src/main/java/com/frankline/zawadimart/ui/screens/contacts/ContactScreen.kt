@@ -98,7 +98,7 @@ fun AboutScreen(navController: NavController){
         //FloatingActionButton
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /* Add action */ },
+                onClick = {  },
                 containerColor = Color.DarkGray
             ) {
                 Icon(Icons.Default.Add, contentDescription = "Add")

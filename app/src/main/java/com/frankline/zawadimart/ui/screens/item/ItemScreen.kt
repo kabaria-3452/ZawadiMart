@@ -16,6 +16,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Search
@@ -48,22 +49,24 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.frankline.zawadimart.R
+import com.frankline.zawadimart.navigation.ROUT_HOME
 import com.frankline.zawadimart.ui.theme.neworange
 import com.frankline.zawadimart.ui.theme.newwhite
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ItemScreen(navController: NavController){
-    Column (modifier = Modifier.fillMaxSize()
-    ){
+fun ItemScreen(navController: NavController) {
+    Column(
+        modifier = Modifier.fillMaxSize()
+    ) {
         //topappbar
-        TopAppBar(title = { Text(text = "product") },
+        TopAppBar(
+            title = { Text(text = "product") },
             colors = TopAppBarDefaults.topAppBarColors(
                 containerColor = neworange,
                 titleContentColor = newwhite,
                 navigationIconContentColor = newwhite,
                 actionIconContentColor = newwhite,
-
 
 
                 ),
@@ -73,13 +76,38 @@ fun ItemScreen(navController: NavController){
                 }
             },
             actions = {
-                Icon(imageVector = Icons.Default.ShoppingCart, contentDescription ="shoppingCart" )
-                Icon(imageVector = Icons.Default.Notifications, contentDescription = "notifications")
+                IconButton(onClick = { navController.navigate(ROUT_HOME) }) {
+                    Icon(
+                        imageVector = Icons.Default.ShoppingCart,
+                        contentDescription = "shoppingCart"
+                    )
+
+                }
+                IconButton(onClick = { navController.navigate(ROUT_HOME) }) {
+                    Icon(
+                        imageVector = Icons.Default.Notifications,
+                        contentDescription = "notifications"
+                    )
+
+                }
+                IconButton(onClick = { navController.navigate(ROUT_HOME) }) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowForward,
+                        contentDescription = "notifications"
+                    )
+
+                }
+
+
+
+                Icon(imageVector = Icons.Default.ShoppingCart, contentDescription = "shoppingCart")
+                Icon(
+                    imageVector = Icons.Default.Notifications,
+                    contentDescription = "notifications"
+                )
             }
 
         )
-
-
 
 
         // end of topappbar
@@ -95,7 +123,7 @@ fun ItemScreen(navController: NavController){
         var search by remember { mutableStateOf("") }
         OutlinedTextField(
             value = search,
-            onValueChange = {search=it},
+            onValueChange = { search = it },
             modifier = Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp),
             leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = "") },
             placeholder = { Text(text = "search here") }
@@ -103,16 +131,19 @@ fun ItemScreen(navController: NavController){
         //end of searchbar
 
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(70.dp))
+
         //Row starts
 
         Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
             Row(modifier = Modifier.padding(start = 20.dp)) {
+
                 Image(
                     painter = painterResource(R.drawable.img),
                     contentDescription = "home",
-                    modifier = Modifier.width(200.dp).height(200.dp).clip(shape = RoundedCornerShape(20.dp)),
-                    contentScale=ContentScale.FillWidth
+                    modifier = Modifier.width(200.dp).height(200.dp)
+                        .clip(shape = RoundedCornerShape(20.dp)),
+                    contentScale = ContentScale.FillWidth
 
 
                 )
@@ -123,6 +154,7 @@ fun ItemScreen(navController: NavController){
                         fontSize = 20.sp,
                         fontWeight = FontWeight.ExtraBold
                     )
+
                     Text(
                         text = "Casual Wear",
                         fontSize = 15.sp,
@@ -141,19 +173,40 @@ fun ItemScreen(navController: NavController){
 
                         )
                     Row {
-                        Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
-                        Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
-                        Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
-                        Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
-                        Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = neworange
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = neworange
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = neworange
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = neworange
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = neworange
+                        )
 
                     }
-                    Button(onClick = {},
-                        colors= ButtonDefaults.buttonColors(Color.Red),
-                        shape = RoundedCornerShape(10.dp))
+                    Button(
+                        onClick = {},
+                        colors = ButtonDefaults.buttonColors(Color.Red),
+                        shape = RoundedCornerShape(10.dp)
+                    )
                     { Text(text = "CONTACT US") }
                 }
-
 
 
             }
@@ -167,8 +220,9 @@ fun ItemScreen(navController: NavController){
                 Image(
                     painter = painterResource(R.drawable.tshirt),
                     contentDescription = "home",
-                    modifier = Modifier.width(200.dp).height(200.dp).clip(shape = RoundedCornerShape(20.dp)),
-                    contentScale=ContentScale.FillWidth
+                    modifier = Modifier.width(200.dp).height(200.dp)
+                        .clip(shape = RoundedCornerShape(20.dp)),
+                    contentScale = ContentScale.FillWidth
 
 
                 )
@@ -197,19 +251,40 @@ fun ItemScreen(navController: NavController){
 
                         )
                     Row {
-                        Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
-                        Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
-                        Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
-                        Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
-                        Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = neworange
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = neworange
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = neworange
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = neworange
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = neworange
+                        )
 
                     }
-                    Button(onClick = {},
-                        colors= ButtonDefaults.buttonColors(Color.Red),
-                        shape = RoundedCornerShape(10.dp))
+                    Button(
+                        onClick = {},
+                        colors = ButtonDefaults.buttonColors(Color.Red),
+                        shape = RoundedCornerShape(10.dp)
+                    )
                     { Text(text = "CONTACT US") }
                 }
-
 
 
             }
@@ -221,11 +296,9 @@ fun ItemScreen(navController: NavController){
                 Image(
                     painter = painterResource(R.drawable.legit),
                     contentDescription = "home",
-                    modifier = Modifier.width(200.dp).height(200.dp).clip(shape = RoundedCornerShape(20.dp)),
-                    contentScale=ContentScale.FillWidth
-
-
-
+                    modifier = Modifier.width(200.dp).height(200.dp)
+                        .clip(shape = RoundedCornerShape(20.dp)),
+                    contentScale = ContentScale.FillWidth
 
 
                 )
@@ -254,42 +327,44 @@ fun ItemScreen(navController: NavController){
 
                         )
                     Row {
-                        Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
-                        Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
-                        Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
-                        Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
-                        Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = neworange
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = neworange
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = neworange
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = neworange
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = neworange
+                        )
 
                     }
-                    Button(onClick = {},
-                        colors= ButtonDefaults.buttonColors(Color.Red),
-                        shape = RoundedCornerShape(10.dp))
+                    Button(
+                        onClick = {},
+                        colors = ButtonDefaults.buttonColors(Color.Red),
+                        shape = RoundedCornerShape(10.dp)
+                    )
                     { Text(text = "CONTACT US") }
                 }
 
 
-
             }
             //row ends
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         }

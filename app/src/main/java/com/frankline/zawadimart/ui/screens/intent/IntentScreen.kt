@@ -34,8 +34,10 @@ import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.frankline.zawadimart.navigation.ROUT_HOME
 import com.frankline.zawadimart.navigation.ROUT_INTENT
 import com.frankline.zawadimart.navigation.ROUT_ITEM
+import com.frankline.zawadimart.navigation.ROUT_SERVICE
 import com.frankline.zawadimart.ui.theme.neworange
 import com.frankline.zawadimart.ui.theme.newwhite
 
@@ -74,11 +76,11 @@ fun IntentScreen(navController: NavController){
                 }) {
                     Icon(imageVector = Icons.Default.Share, contentDescription = "menu")
                 }
-                IconButton(onClick = {}) {
+                IconButton(onClick = {navController.navigate(ROUT_SERVICE)}) {
                     Icon(imageVector = Icons.Default.Settings, contentDescription = "menu")
                 }
                 IconButton(onClick = {
-                    navController.navigate(ROUT_INTENT)
+                    navController.navigate(ROUT_HOME)
                 }) {
                     Icon(imageVector = Icons.Default.ArrowForward, contentDescription = "menu")
                 }
