@@ -183,12 +183,14 @@ fun BottomNavigationBar(navController: NavController) {
         containerColor = Color(0xFF6F6A72),
         contentColor = Color.White
     ) {
+
         NavigationBarItem(
             selected = false,
             onClick = { navController.navigate(ROUT_PRODUCT_LIST) },
             icon = { Icon(Icons.Default.Home, contentDescription = "Product List") },
             label = { Text("Home") }
         )
+
         NavigationBarItem(
             selected = false,
             onClick = { navController.navigate(ROUT_ADD_PRODUCT) },
@@ -196,12 +198,12 @@ fun BottomNavigationBar(navController: NavController) {
             label = { Text("Add") }
         )
 
-
         NavigationBarItem(
             selected = false,
             onClick = { navController.navigate(ROUT_ADD_PRODUCT) },
             icon = { Icon(painter = painterResource(R.drawable.profile), contentDescription = "") },
             label = { Text("Profile") }
+
         )
     }
 }
